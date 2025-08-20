@@ -101,6 +101,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeInteractiveElements() {
         lucide.createIcons();
 
+        const fixSafariAnimation = () => {
+            const marquee = document.querySelector('.skills-marquee-container');
+            if (!marquee) return;
+
+            // 1. Temporarily remove the animation from the element's style
+            marquee.style.animation = 'none';
+
+            // 2. Trigger a "reflow". This is the magic step.
+            // Accessing offsetHeight makes the browser recalculate the element's layout.
+            void marquee.offsetHeight;
+
+            // 3. Add the animation back. The browser now sees it as a "new" change.
+            marquee.style.animation = '';
+        };
+        // We run this after a tiny delay to make sure the page is fully ready.
+        setTimeout(fixSafariAnimation, 100);
+        
+
         // --- STATS COUNTER ANIMATION ---
         const animateStatNumbers = (entries, observer) => {
             entries.forEach(entry => {
@@ -127,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const statObserver = new IntersectionObserver(animateStatNumbers, { threshold: 0.5 });
         document.querySelectorAll('.stat-number').forEach(num => statObserver.observe(num));
 
-        
+
         // Custom cursor logic...
         const cursorDot = document.getElementById('cursor-dot');
         const cursorOutline = document.getElementById('cursor-outline');
