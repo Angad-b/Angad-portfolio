@@ -489,6 +489,8 @@ html.dark footer { border-top-color: rgba(255,255,255,0.1); }
 .skills-marquee-container {
     display: flex;
     width: fit-content;
+    /* Added -webkit- for broader compatibility */
+    -webkit-animation: marquee 40s linear infinite;
     animation: marquee 40s linear infinite;
 }
 .skills-marquee {
@@ -521,6 +523,10 @@ html.dark footer { border-top-color: rgba(255,255,255,0.1); }
 .skills-marquee-container:hover .skill-chip:hover {
     opacity: 1;
     transform: scale(1.1);
+}
+@-webkit-keyframes marquee {
+    from { -webkit-transform: translateX(0%); }
+    to { -webkit-transform: translateX(-50%); }
 }
 @keyframes marquee {
     from { transform: translateX(0%); }
