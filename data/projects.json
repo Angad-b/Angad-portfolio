@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Ascension — Java Swing Game",
+    "summary": "My first game project, featuring a complete game loop, collision detection, and scoring.",
+    "stack": ["Java", "Swing"],
+    "cover": "https://placehold.co/600x400/9F9CF3/FFFFFF?text=Ascension",
+    "link": "#"
+  },
+  {
+    "title": "Shakespeare Pizza — Client Site",
+    "summary": "A fast, modern marketing website for a local business with an integrated online ordering flow.",
+    "stack": ["HTML", "CSS", "JS", "Netlify"],
+    "cover": "https://placehold.co/600x400/A7F3D0/0F1226?text=Pizza+Site",
+    "link": "#"
+  },
+  {
+    "title": "Baran’s Bakery — Demo Landing",
+    "summary": "A conversion-focused demo landing page designed to attract local bakery clients.",
+    "stack": ["React", "Tailwind CSS"],
+    "cover": "https://placehold.co/600x400/FECACA/0F1226?text=Bakery+Demo",
+    "link": "#"
+  },
+  {
+    "title": "AirDraw — Canvas Experiment",
+    "summary": "A proof-of-concept web app using the MediaDevices API to draw with your camera.",
+    "stack": ["JavaScript", "Canvas", "API"],
+    "cover": "https://placehold.co/600x400/9F9CF3/FFFFFF?text=AirDraw",
+    "link": "#"
+  }
+]

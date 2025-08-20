@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2023",
+    "title": "Started High School",
+    "description": "Began my journey at Huron Heights Secondary School, diving into computer science."
+  },
+  {
+    "date": "2024",
+    "title": "Launched First Game",
+    "description": "Developed 'Ascension', my first complete game project using Java Swing."
+  },
+  {
+    "date": "2024",
+    "title": "First Client Project",
+    "description": "Built and deployed a marketing website for Shakespeare Pizza, a local business."
+  },
+  {
+    "date": "2025",
+    "title": "Founded SkilledStack",
+    "description": "Established my own web agency to provide digital solutions for small businesses."
+  },
+  {
+    "date": "Present",
+    "title": "Aiming for Waterloo",
+    "description": "Focusing on academics and projects to prepare for University of Waterloo's CS/SE programs."
+  }
+]
