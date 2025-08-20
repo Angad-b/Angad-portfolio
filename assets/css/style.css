@@ -493,6 +493,8 @@ html.dark footer { border-top-color: rgba(255,255,255,0.1); }
     -webkit-animation: marquee 40s linear infinite;
     animation: marquee 40s linear infinite;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
 }
 .skills-marquee {
     display: flex;
