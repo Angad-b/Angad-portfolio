@@ -34,8 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- RENDER DYNAMIC CONTENT ---
     function renderProjects(projects) {
-        const container = document.querySelector('#projects .grid-2');
-        if (!container) return;
+        // This new selector is more robust and finds the project grid on any page.
+        const container = document.querySelector('#projects .grid-2, #project-grid .grid-2');
+        if (!container) return; // If it's not on the current page, do nothing.
+
         container.innerHTML = projects.map(p => `
             <div class="project-card">
                 <img src="${p.cover}" alt="${p.title}">
@@ -101,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeInteractiveElements() {
         lucide.createIcons();
 
+
         const fixSafariAnimation = () => {
             const marquee = document.querySelector('.skills-marquee-container');
             if (!marquee) return;
@@ -145,18 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const statObserver = new IntersectionObserver(animateStatNumbers, { threshold: 0.5 });
         document.querySelectorAll('.stat-number').forEach(num => statObserver.observe(num));
 
-
-        // Custom cursor logic...
-        const cursorDot = document.getElementById('cursor-dot');
-        const cursorOutline = document.getElementById('cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            cursorOutline.style.left = `${posX}px`;
-            cursorOutline.style.top = `${posY}px`;
-        });
 
         // Navbar scroll logic...
         const navbar = document.getElementById('navbar');

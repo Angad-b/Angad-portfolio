@@ -37,7 +37,6 @@ body {
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
     overflow-x: hidden;
-    cursor: none; /* Hide default cursor */
 }
 
 .container {
@@ -63,32 +62,6 @@ a {
 }
 a:hover { color: var(--secondary); }
 
-/* --- CUSTOM CURSOR --- */
-#cursor-dot, #cursor-outline {
-    pointer-events: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-}
-#cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary);
-}
-#cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--primary);
-    transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
-}
-body:hover #cursor-dot, body:hover #cursor-outline {
-    opacity: 1;
-}
 
 /* --- Animated Background & Parallax --- */
 #animated-background {
@@ -195,7 +168,6 @@ html.dark #navbar.scrolled {
     border: none;
     font-weight: 600;
     font-size: 1rem;
-    cursor: none; /* Use custom cursor */
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
     overflow: hidden;
@@ -593,4 +565,149 @@ html.dark footer { border-top-color: rgba(255,255,255,0.1); }
     .process-arrow {
         display: block;
     }
+}
+
+/* --- NEW PAGE STYLES --- */
+
+/* Generic Hero for Sub-Pages */
+.page-hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+/* Service Packages */
+.service-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+.service-package {
+    background-color: var(--surface);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow-hover-color);
+}
+.service-package.featured {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+}
+.service-package h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.service-package .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+.service-package ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.service-package ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--ink-light);
+}
+.service-package ul li i {
+    color: var(--secondary);
+}
+
+/* Full About Page Grid */
+.about-grid-full {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+}
+.about-image-full img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px var(--shadow-hover-color);
+    margin: 0 auto;
+    display: block;
+}
+.about-content-full p {
+    font-size: 1.1rem;
+    color: var(--ink-light);
+    margin-bottom: 1.5rem;
+}
+
+/* --- CONTACT FORM STYLES (Fix) --- */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--surface);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px var(--shadow-hover-color);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--ink-light);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(159, 156, 243, 0.4);
+}
+.contact-form .btn {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-grid-full {
+        grid-template-columns: 1fr 2fr;
+        text-align: left;
+    }
+}
+
+/* ADD this to the bottom of style.css */
+
+/* For the purple "View Projects" button */
+.btn-primary:hover {
+    color: #0F1226; /* Dark ink color for text */
+}
+
+/* For the mint "Hire Me" and "Contact Me" buttons */
+.btn-secondary:hover {
+    color: #FFFFFF; /* White text */
+}
+
+/* For the transparent "Resume" button */
+.btn-outline:hover {
+    color: #FFFFFF; /* White text */
+    background-color: var(--ink-light); /* Added a background for contrast */
 }
