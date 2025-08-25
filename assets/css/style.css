@@ -711,3 +711,45 @@ html.dark footer { border-top-color: rgba(255,255,255,0.1); }
     color: #FFFFFF; /* White text */
     background-color: var(--ink-light); /* Added a background for contrast */
 }
+
+/* ADD THIS to the bottom of style.css */
+
+/* --- INTERESTS GRID SECTION --- */
+.interests-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr; /* One column on mobile */
+}
+.interest-card {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--primary);
+}
+.interest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow-hover-color);
+}
+.interest-icon {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+.interest-icon i {
+    width: 32px;
+    height: 32px;
+}
+.interest-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+.interest-card p {
+    color: var(--ink-light);
+}
+
+@media (min-width: 768px) {
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+}
